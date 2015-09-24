@@ -19,8 +19,12 @@ let lib = ffi.Library(`./dll/CUESDK${arch}_2013.dll`, {
     'CorsairGetLedIdForKeyName': ['int', ['char']]
 });
 
+//Just expose the methods for now, we'll add some proper functionality later.
 module.exports = {
-    init: lib.CorsairPerformProtocolHandshake,
+    init: lib.CorsairPerformProtocolHandshake, // Must be called before any other methods
     getDeviceCount: lib.CorsairGetDeviceCount,
-    getLedPositions: lib.CorsairGetLedPositions
+    getLedPositions: lib.CorsairGetLedPositions,
+    getDeviceInfo: lib.CorsairGetDeviceInfo,
+    getLedIdForKeyName: lib.CorsairGetLedIdForKeyName,
+    setLedColor: lib.CorsairSetLedsColors
 };
