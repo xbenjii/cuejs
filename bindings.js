@@ -10,6 +10,7 @@ let double = ref.types.double;
 
 let structs = {};
 let pointers = {};
+
 structs.CorsairDeviceInfo = struct({
     type: int,
     model: charPtr,
